@@ -3,8 +3,6 @@ from cryptography.fernet import Fernet
 import base64
 import hashlib
 
-# -------------------- HELPER FUNCTIONS --------------------
-
 def generate_key(passkey):
     """Generate a Fernet key based on passkey."""
     key = hashlib.sha256(passkey.encode()).digest()
@@ -39,7 +37,7 @@ def login(username, password):
         failed_attempts[username] = failed_attempts.get(username, 0) + 1
         return False
 
-# -------------------- STREAMLIT UI --------------------
+# STREAMLIT UI 
 
 st.set_page_config(page_title="🔐 Secure Encryption App", layout="centered")
 
